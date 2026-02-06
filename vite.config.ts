@@ -7,9 +7,15 @@ export default defineConfig(({ mode }) => {
   // 현재 모드(development/production)에 맞는 환경변수를 로드합니다.
   const env = loadEnv(mode, process.cwd(), '')
 
+  // .env의 VITE_BASE_URL을 사용하거나 기본값 '/' 적용
+  const base = env.VITE_BASE_URL || '/'
+  const siteUrl = `${env.VITE_SITE_URL || 'http://localhost:5173'}/${base.replace(/^\//, '')}`
+
   return {
-    // .env의 VITE_BASE_URL을 사용하거나 기본값 '/' 적용
-    base: env.VITE_BASE_URL || '/',
+    define: {
+      'import.meta.env.VITE_SITE_URL': JSON.stringify(siteUrl),
+    },
+    base,
     plugins: [
       react(),
       tailwindcss(),

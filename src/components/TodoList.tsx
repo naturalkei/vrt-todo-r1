@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
-import { useTodoStore } from '../stores/todo-store';
 import {
   CheckCircle,
   Circle,
+  Leaf,
+  PencilSimple,
   PlusCircle,
   Trash,
-  PencilSimple,
   X,
-  Leaf,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react'
+import { useEffect, useState } from 'react'
+
+import { useTodoStore } from '../stores/todo-store'
 
 export default function TodoList() {
   const {
@@ -21,41 +22,41 @@ export default function TodoList() {
     updateTodoText,
     deleteTodo,
     clearAllTodos,
-  } = useTodoStore();
+  } = useTodoStore()
 
-  const [newTodoText, setNewTodoText] = useState('');
-  const [editingId, setEditingId] = useState<number | null>(null);
-  const [editText, setEditText] = useState('');
+  const [newTodoText, setNewTodoText] = useState('')
+  const [editingId, setEditingId] = useState<number | null>(null)
+  const [editText, setEditText] = useState('')
 
   useEffect(() => {
-    loadTodos();
-  }, [loadTodos]);
+    loadTodos()
+  }, [loadTodos])
 
   const handleAddTodo = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (newTodoText.trim()) {
-      await addTodo(newTodoText);
-      setNewTodoText('');
+      await addTodo(newTodoText)
+      setNewTodoText('')
     }
-  };
+  }
 
   const handleStartEdit = (id: number, text: string) => {
-    setEditingId(id);
-    setEditText(text);
-  };
+    setEditingId(id)
+    setEditText(text)
+  }
 
   const handleSaveEdit = async (id: number) => {
     if (editText.trim()) {
-      await updateTodoText(id, editText);
-      setEditingId(null);
-      setEditText('');
+      await updateTodoText(id, editText)
+      setEditingId(null)
+      setEditText('')
     }
-  };
+  }
 
   const handleCancelEdit = () => {
-    setEditingId(null);
-    setEditText('');
-  };
+    setEditingId(null)
+    setEditText('')
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-acnh-sky via-acnh-cream to-acnh-mint p-6 md:p-12">
@@ -216,5 +217,5 @@ export default function TodoList() {
         </div>
       </div>
     </div>
-  );
+  )
 }
