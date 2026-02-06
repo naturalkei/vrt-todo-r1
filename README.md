@@ -1,29 +1,51 @@
-# VRT Starter R1
+# 🌿 VRT Todo R1
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-5-FF6B6B?style=flat-square)
+![IndexedDB](https://img.shields.io/badge/IndexedDB-idb-yellow?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-> **2026 Modern Frontend Boilerplate**
-> <br> A highly opinionated starter template featuring **React 19**, **Vite 7**, and **Tailwind CSS 4**.
-> <br> Formatted exclusively with **ESLint 9** (No Prettier, No Semicolons).
+> **🎮 Animal Crossing: New Horizons Themed Todo App**
+> <br> A cozy, whimsical todo list application with **IndexedDB** persistence, **Zustand** state management, and a delightful **ACNH-inspired** aesthetic.
+> <br> Built with **React 19**, **Vite 7**, **Tailwind CSS 4**, and automated **Pull Request workflows**.
 
-![VRT](./public/vrt-260108-1.png)
+## ✨ Features
 
-## 🚀 Features
+### 🎨 **Animal Crossing Aesthetic**
+- **Pastel Color Palette:** Soft creams, mints, sky blues, peaches, and yellows
+- **Bubbly Typography:** `Baloo 2` for English/numbers, `Noto Sans KR` for Korean
+- **Rounded Everything:** Heavily rounded corners (`rounded-bubble`, `rounded-bubbly`)
+- **Thick Borders:** 4px borders with complementary colors
+- **Soft Shadows:** Gentle shadow effects for depth
+- **NookPhone Vibes:** Cozy, playful, handcrafted UI inspired by Animal Crossing's in-game interface
 
-* **⚡️ Blazing Fast:** Built with **Vite 7** for instant server start and HMR.
-* **⚛️ React 19:** Full support for the latest React features (Server Components, Actions).
-* **🎨 Tailwind CSS v4:** Configured with the new oxide engine using TypeScript.
-* **✨ Zero Prettier:** Styling and formatting are handled entirely by **ESLint 9** (`@stylistic/eslint-plugin`).
-    * *Single Quotes*
-    * *No Semicolons*
-* **🛡️ Type Safe:** Strict TypeScript 5 configuration with separated `app` and `node` environments.
-* **🛣️ Smart Routing:** **React Router v6** with auto-mapped path aliases (`@/` -> `src/`).
-* **🤖 CI/CD Ready:** Automated deployment to **GitHub Pages** via GitHub Actions.
-* **📱 PWA Ready:** Includes proper meta tags, favicons, and Open Graph setups.
+### 🗄️ **Persistent Storage**
+- **IndexedDB:** All todos persist locally in your browser
+- **Async Operations:** Promise-based CRUD helpers
+- **Type-Safe:** Full TypeScript support with proper interfaces
+
+### 🔄 **State Management**
+- **Zustand Store:** Lightweight and intuitive state management
+- **Optimistic Updates:** Seamless UI updates with proper error handling
+- **Loading States:** Visual feedback during async operations
+
+### 🛠️ **Full CRUD Operations**
+- ✅ **Create:** Add new todos with validation
+- 📖 **Read:** View all todos with completion status
+- ✏️ **Update:** Toggle completion or edit todo text inline
+- 🗑️ **Delete:** Remove individual todos or clear all at once
+- 📊 **Stats:** Track total, completed, and remaining todos
+
+### 🤖 **DevOps & Automation**
+- **Automated PRs:** Each feature implemented via individual pull requests
+- **CI/CD Pipelines:** 
+  - GitHub Actions deployment to GitHub Pages
+  - PR validation with linting and build checks
+  - Artifact uploads for review
+- **Conventional Commits:** Semantic commit messages
+- **Standard Version:** Automated changelog and versioning
 
 ## 📦 Tech Stack
 
@@ -32,18 +54,21 @@
 | **Framework** | [React](https://react.dev) | v19 |
 | **Build Tool** | [Vite](https://vitejs.dev) | v7 |
 | **Styling** | [Tailwind CSS](https://tailwindcss.com) | v4 |
+| **State Management** | [Zustand](https://zustand-demo.pmnd.rs) | v5 |
+| **Database** | [idb (IndexedDB Wrapper)](https://github.com/jakearchibald/idb) | v8 |
+| **Icons** | [@phosphor-icons/react](https://phosphoricons.com) | v2 |
 | **Language** | [TypeScript](https://www.typescriptlang.org) | v5 |
-| **Linter** | [ESLint (Flat Config)](https://eslint.org) | v9 |
-| **Router** | [React Router](https://reactrouter.com) | v6 |
-| **Package Manager** | [pnpm](https://pnpm.io) | v9+ |
+| **Linter** | [ESLint](https://eslint.org) | v9 |
+| **Package Manager** | [pnpm](https://pnpm.io) | v10+ |
+| **Versioning** | [standard-version](https://github.com/conventional-changelog/standard-version) | v9 |
 
-## 🛠 Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/vrt-starter-r1.git
-cd vrt-starter-r1
+git clone https://github.com/naturalkei/vrt-todo-r1.git
+cd vrt-todo-r1
 ```
 
 ### 2. Install dependencies
@@ -52,81 +77,196 @@ cd vrt-starter-r1
 pnpm install
 ```
 
-### 3. Setup Environment Variables (Optional)
-
-Create a `.env` file in the root directory if you need to customize local development variables.
-
-```conf
-VITE_BASE_URL="/{reponame}"
-VITE_GITHUB_URL="https://github.com/{username}/{reponame}"
-VITE_SITE_URL="https://{username}.github.io/{reponame}/"
-```
-
-### 4. Run Development Server
+### 3. Run Development Server
 
 ```bash
 pnpm dev
 ```
 
+Open your browser and visit `http://localhost:5173` to see the app! 🎉
+
+### 4. Build for Production
+
+```bash
+pnpm build
+```
+
+### 5. Preview Production Build
+
+```bash
+pnpm serve
+```
+
 ## 📜 Scripts
 
-| Script            | Description                                                                |
-|-------------------|----------------------------------------------------------------------------|
-| `pnpm dev`        | Starts the development server.                                              |
-| `pnpm build`      | Runs TypeScript type checking (`tsc -b`) and builds for production.         |
-| `pnpm serve`      | Previews the production build locally.                                      |
-| `pnpm lint`       | Runs ESLint styling issues.                                                 |
-| `pnpm lint:fix`   | Automatically fixes all ESLint auto-fixable style issues.                   |
-
+| Script | Description |
+|--------|-------------|
+| `pnpm dev` | Starts the Vite development server with HMR |
+| `pnpm build` | Runs TypeScript check and builds for production |
+| `pnpm serve` | Previews the production build locally |
+| `pnpm lint` | Runs ESLint to check for code style issues |
+| `pnpm lint:fix` | Automatically fixes ESLint issues |
+| `pnpm release` | Generates changelog and bumps version (standard-version) |
 
 ## 🧩 Project Structure
 
 ```text
-vrt-starter-r1/
-├── .github/workflows/   # GitHub Actions (Deployment)
-├── public/              # Static assets (Favicon, etc.)
+vrt-todo-r1/
+├── .github/
+│   └── workflows/
+│       ├── deploy.yml        # GitHub Pages deployment
+│       └── ci.yml            # PR validation CI
 ├── src/
-│   ├── components/      # Shared components (Layout, UI)
-│   ├── pages/           # Page components (Home, etc.)
-│   ├── App.tsx          # App entry with Routes
-│   ├── main.tsx         # React DOM rendering
-│   └── index.css        # Tailwind imports & global styles
-├── .env                 # Environment variables
-├── eslint.config.ts     # ESLint 9 Flat Config
-├── tailwind.config.ts   # Tailwind CSS Config
-├── tsconfig.json        # TypeScript Root Config (References)
-├── vite.config.ts       # Vite Config
+│   ├── components/
+│   │   ├── Layout.tsx        # (Unused in current version)
+│   │   └── TodoList.tsx      # Main Todo UI component (ACNH styled)
+│   ├── lib/
+│   │   └── db.ts             # IndexedDB wrapper with CRUD helpers
+│   ├── stores/
+│   │   └── todo-store.ts     # Zustand store for todo state
+│   ├── pages/                # (Unused in current version)
+│   ├── App.tsx               # App entry point
+│   ├── main.tsx              # React DOM rendering
+│   └── index.css             # Tailwind imports & Google Fonts
+├── tailwind.config.ts        # ACNH color palette & custom theme
+├── vite.config.ts            # Vite configuration
+├── tsconfig.json             # TypeScript configuration
+├── eslint.config.ts          # ESLint flat config
 └── package.json
 ```
 
-## 💅 Code Style
+## 🎨 Design System
 
-(ESLint Only)This project does not use Prettier. Instead, it uses ESLint 9 with `@stylistic/eslint-plugin` to enforce specific formatting rules:
+### Color Palette (ACNH Theme)
 
-* Semi: Never (`const a = 1`)
-* Quotes: Single (`'hello'`)
-* JSX Quotes: Double (`<div className="box">`)
-* Indent: 2 spaces
-* Object Curly Spacing: Always (`{ key: value }`)
-* React Hooks: Strictly enforced (`react-hooks/recommended`)
+```typescript
+colors: {
+  acnh: {
+    cream: '#FFF8E7',           // Warm cream background
+    'cream-dark': '#FFE4BC',    // Darker cream
+    mint: '#B8E6D5',            // Soft mint green
+    'mint-dark': '#8ED3B8',     // Darker mint
+    sky: '#C9E4F5',             // Light sky blue
+    'sky-dark': '#A5D3F0',      // Darker sky
+    peach: '#FFD5C2',           // Soft peach
+    'peach-dark': '#FFBB9F',    // Darker peach
+    yellow: '#FFF4A3',          // Soft yellow
+    'yellow-dark': '#FFE87C',   // Darker yellow
+    brown: '#8B6F47',           // Natural brown
+    'brown-dark': '#6B5434',    // Darker brown
+    green: '#7EC850',           // Vibrant green
+    'green-dark': '#5FA732',    // Darker green
+  }
+}
+```
 
-To fix style issues, simply run:
+### Typography
+
+- **Baloo 2:** Used for English text and numbers (bubbly, playful feel)
+- **Noto Sans KR:** Used for Korean text (clean, readable)
+
+### Border Radius
+
+- `rounded-bubble`: 2rem (32px)
+- `rounded-bubbly`: 2.5rem (40px)
+
+### Shadows
+
+- `shadow-soft`: Subtle shadow for cards
+- `shadow-bubble`: Deeper shadow for interactive elements
+
+## 🤖 Automated Development Workflow
+
+This project was built using a strict **PR-per-feature** workflow:
+
+1. **Step 1 (PR #1):** Project scaffolding and dependency installation
+2. **Step 2 (PR #2):** IndexedDB wrapper implementation
+3. **Step 3 (PR #3):** Zustand store with async actions
+4. **Step 4 (PR #4):** Animal Crossing UI implementation
+5. **Step 5 (PR #5):** CI/CD pipeline setup
+6. **Step 6 (PR #6):** Documentation finalization
+
+Each step followed the same routine:
 ```bash
-pnpm lint:fix
+git checkout -b feature/<name>
+# ... implement changes ...
+git commit -m "feat(<scope>): <message>"
+git push -u origin feature/<name>
+gh pr create --title "..." --body "..." --base main
+gh pr merge --merge --delete-branch
+git checkout main && git pull
 ```
 
 ## 🚀 Deployment
-This template is configured to deploy to GitHub Pages automatically.
 
-1. Push your code to the main branch.
-1. Go to your repository Settings > Pages.
-1. Ensure the source is set to GitHub Actions.
-1. The workflow defined in .github/workflows/deploy.yml will handle the rest.
+This app automatically deploys to **GitHub Pages** on every push to `main`:
 
-## 📝 Naming Convention
-The suffix `-r1` stands for Revision 1. This is a personal sequence numbering system for skeleton projects.
-Future updates to the stack will be released as `-r2`, `-r3`, etc.
+1. Push changes to `main` branch
+2. GitHub Actions workflow runs (`deploy.yml`)
+3. App builds and deploys to `https://naturalkei.github.io/vrt-todo-r1/`
+
+## 📝 Usage
+
+### Adding a Todo
+1. Type your todo in the input field
+2. Click the "추가" (Add) button or press Enter
+3. Your todo appears in the list with a yellow background
+
+### Completing a Todo
+1. Click the circle icon next to any todo
+2. Completed todos turn green with a checkmark
+3. Text gets a strikethrough effect
+
+### Editing a Todo
+1. Click the pencil icon (✏️) on any todo
+2. Modify the text in the inline input
+3. Click the checkmark to save or X to cancel
+
+### Deleting a Todo
+1. Click the trash icon (🗑️) on any todo
+2. The todo is immediately removed from the database
+
+### Clearing All Todos
+1. Scroll to the bottom
+2. Click "🗑️ 모두 지우기" (Clear All) button
+3. All todos are permanently deleted
+
+## 🌟 Why This Stack?
+
+- **Vite 7:** Lightning-fast HMR and builds
+- **React 19:** Latest React features and optimizations
+- **Tailwind CSS 4:** Oxide engine for faster styling
+- **Zustand:** Minimalist state management (no boilerplate)
+- **IndexedDB:** Persistent storage without external services
+- **pnpm:** Fast, disk-efficient package management
+- **Phosphor Icons:** Beautiful, consistent icon set with multiple weights
+
+## 🐛 Known Issues
+
+- None currently! 🎉
+
+## 🔮 Future Enhancements
+
+- [ ] Drag-and-drop todo reordering
+- [ ] Todo categories/tags
+- [ ] Dark mode toggle
+- [ ] Due dates and reminders
+- [ ] Export/import todos
+- [ ] PWA support for offline usage
+- [ ] Todo search and filtering
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
+MIT License - feel free to use this project for learning or as a starter template!
+
+## 💝 Credits
+
+- Design inspiration: **Animal Crossing: New Horizons** by Nintendo
+- Icons: [Phosphor Icons](https://phosphoricons.com)
+- Fonts: [Google Fonts](https://fonts.google.com)
+
+---
+
+Made with 🌸 by following the strict PR-per-feature protocol.
+
+**Enjoy your cozy todo experience!** 🦝✨
