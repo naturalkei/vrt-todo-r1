@@ -66,12 +66,12 @@ export default function TodoList() {
           <div className="flex items-center justify-center gap-3 mb-2">
             <Leaf size={40} weight="duotone" className="text-acnh-green" />
             <h1 className="text-4xl font-bold text-acnh-brown-dark font-bubbly">
-              나의 할 일
+              My Todos
             </h1>
             <Leaf size={40} weight="duotone" className="text-acnh-green rotate-180" />
           </div>
           <p className="text-center text-acnh-brown font-korean text-sm">
-            오늬날 해야 할 일들을 적어보세요! ✨
+            Write down the things you need to do today! ✨
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function TodoList() {
               type="text"
               value={newTodoText}
               onChange={(e) => setNewTodoText(e.target.value)}
-              placeholder="새로운 할 일을 입력하세요..."
+              placeholder="Enter a new todo..."
               className="flex-1 rounded-bubble border-4 border-acnh-mint-dark bg-white px-6 py-4 text-lg font-korean text-acnh-brown-dark placeholder-acnh-brown/50 shadow-soft transition-all focus:border-acnh-green focus:outline-none focus:ring-0 focus:shadow-bubble"
               disabled={isLoading}
             />
@@ -92,7 +92,7 @@ export default function TodoList() {
               className="rounded-bubble border-4 border-acnh-green-dark bg-acnh-green px-6 py-4 font-bold text-white shadow-soft transition-all hover:bg-acnh-green-dark hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               <PlusCircle size={28} weight="fill" />
-              <span className="font-bubbly">추가</span>
+              <span className="font-bubbly">Add</span>
             </button>
           </div>
         </form>
@@ -110,7 +110,7 @@ export default function TodoList() {
             <div className="rounded-bubbly border-4 border-acnh-cream-dark bg-white p-12 text-center shadow-soft">
               <p className="text-2xl font-bubbly text-acnh-brown mb-2">🌸</p>
               <p className="font-korean text-acnh-brown">
-                아직 할 일이 없어요! 위에서 추가해보세요.
+                No todos yet! Add one above.
               </p>
             </div>
           )}
@@ -202,7 +202,7 @@ export default function TodoList() {
               disabled={isLoading}
               className="rounded-bubble border-4 border-acnh-brown bg-acnh-brown-dark px-8 py-3 font-bubbly text-lg font-bold text-acnh-cream shadow-soft transition-all hover:bg-acnh-brown hover:scale-105 active:scale-95 disabled:opacity-50"
             >
-              🗑️ 모두 지우기
+              🗑️ Clear All
             </button>
           </div>
         )}
@@ -210,9 +210,9 @@ export default function TodoList() {
         {/* Stats Footer */}
         <div className="mt-8 rounded-bubbly border-4 border-acnh-cream-dark bg-white/80 p-4 text-center shadow-soft">
           <p className="font-korean text-sm text-acnh-brown">
-            전체 <span className="font-bold text-acnh-brown-dark">{todos.length}</span>개 ·{' '}
-            완료 <span className="font-bold text-acnh-green-dark">{todos.filter(t => t.completed).length}</span>개 ·{' '}
-            남음 <span className="font-bold text-acnh-yellow-dark">{todos.filter(t => !t.completed).length}</span>개
+            Total <span className="font-bold text-acnh-brown-dark">{todos.length}</span> items ·{' '}
+            Completed <span className="font-bold text-acnh-green-dark">{todos.filter(t => t.completed).length}</span> items ·{' '}
+            Remaining <span className="font-bold text-acnh-yellow-dark">{todos.filter(t => !t.completed).length}</span> items
           </p>
         </div>
       </div>
