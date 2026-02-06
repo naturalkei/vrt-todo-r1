@@ -1,9 +1,12 @@
 /* Tailwind CSS v4 Entry */
 @import "tailwindcss";
 
+/* Google Fonts - Animal Crossing Theme */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
 /* Global Base Styles */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Baloo 2', 'Noto Sans KR', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
