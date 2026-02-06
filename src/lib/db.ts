@@ -47,13 +47,13 @@ export async function getTodoById(id: number): Promise<Todo | undefined> {
 
 export async function addTodo(todo: Omit<Todo, 'id'>): Promise<number> {
   const db = await getDB()
-  return db.add(STORE_NAME, todo)
+  return db.add(STORE_NAME, todo) as Promise<number>
 }
 
 export async function updateTodo(id: number, todo: Partial<Todo>): Promise<void> {
   const db = await getDB()
   const existing = await db.get(STORE_NAME, id)
-  
+
   if (!existing) {
     throw new Error(`Todo with id ${id} not found`)
   }
